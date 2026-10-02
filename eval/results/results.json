@@ -1,0 +1,611 @@
+{
+ "plans": {
+  "naive": {
+   "name": "naive_cost_first",
+   "waves": 14,
+   "apps_retired": 93,
+   "claimed_saving": 34950000,
+   "net_of_rollbacks": 19265000,
+   "rollbacks": 42,
+   "orphaned_links": 108,
+   "critical_orphans": 49,
+   "rework_effort": 1005,
+   "renewal_penalty": 5173000,
+   "freeze_violations": 4,
+   "effective_waves": 30
+  },
+  "governed": {
+   "name": "governed_dependency_aware",
+   "waves": 21,
+   "apps_retired": 93,
+   "claimed_saving": 34950000,
+   "net_of_rollbacks": 34950000,
+   "rollbacks": 0,
+   "orphaned_links": 0,
+   "critical_orphans": 0,
+   "rework_effort": 0,
+   "renewal_penalty": 13136000,
+   "freeze_violations": 0,
+   "effective_waves": 21
+  }
+ },
+ "benefits": {
+  "naive_cost_first/loose_v1": {
+   "plan": "naive_cost_first",
+   "definition": "loose_v1",
+   "digest": "8148f90016c8",
+   "annual_run_rate": 34950000,
+   "cost_to_achieve": 0,
+   "missed_renewal_cost": 0,
+   "net_year_one": 34950000
+  },
+  "naive_cost_first/verified_v1": {
+   "plan": "naive_cost_first",
+   "definition": "verified_v1",
+   "digest": "e2c2153115ff",
+   "annual_run_rate": 9719000,
+   "cost_to_achieve": 4472500,
+   "missed_renewal_cost": 2760000,
+   "net_year_one": 2486500
+  },
+  "governed_dependency_aware/loose_v1": {
+   "plan": "governed_dependency_aware",
+   "definition": "loose_v1",
+   "digest": "8148f90016c8",
+   "annual_run_rate": 34950000,
+   "cost_to_achieve": 0,
+   "missed_renewal_cost": 0,
+   "net_year_one": 34950000
+  },
+  "governed_dependency_aware/verified_v1": {
+   "plan": "governed_dependency_aware",
+   "definition": "verified_v1",
+   "digest": "e2c2153115ff",
+   "annual_run_rate": 34950000,
+   "cost_to_achieve": 2460000,
+   "missed_renewal_cost": 13136000,
+   "net_year_one": 19354000
+  }
+ },
+ "renewal_structural_floor": 3395000,
+ "governance_decisions": {
+  "BLOCKED": 34,
+  "APPROVAL_PACK_READY": 24,
+  "HUMAN_REVIEW_REQUIRED": 35
+ },
+ "ai_layer_cost_usd": 0.6464,
+ "routing_dev": {
+  "all_frontier": {
+   "profile": "all_frontier",
+   "n": 24,
+   "accuracy": 1.0,
+   "cost_per_1000": 61.0,
+   "cost_per_correct": 0.061,
+   "mean_latency_ms": 11912.0,
+   "p95_latency_ms": 22518.0,
+   "tier_mix": {
+    "nano": 0,
+    "fast": 0,
+    "balanced": 0,
+    "frontier": 24
+   },
+   "failures": [],
+   "ci95": [
+    0.862,
+    1.0
+   ]
+  },
+  "all_nano": {
+   "profile": "all_nano",
+   "n": 24,
+   "accuracy": 0.125,
+   "cost_per_1000": 0.17,
+   "cost_per_correct": 0.00138,
+   "mean_latency_ms": 1792.0,
+   "p95_latency_ms": 3250.0,
+   "tier_mix": {
+    "nano": 24,
+    "fast": 0,
+    "balanced": 0,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed frontier, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed balanced, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed frontier, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed frontier, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed frontier, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed frontier, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none"
+   ],
+   "ci95": [
+    0.043,
+    0.31
+   ]
+  },
+  "static_rules": {
+   "profile": "static_rules",
+   "n": 24,
+   "accuracy": 0.667,
+   "cost_per_1000": 5.27,
+   "cost_per_correct": 0.00791,
+   "mean_latency_ms": 3296.0,
+   "p95_latency_ms": 7117.0,
+   "tier_mix": {
+    "nano": 4,
+    "fast": 8,
+    "balanced": 12,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got fast/low",
+    "extract_dependencies: needed frontier, got fast/low",
+    "summarise_impact: needed balanced, got fast/low",
+    "summarise_impact: needed frontier, got fast/low",
+    "draft_status_pack: needed frontier, got balanced/low",
+    "draft_change_request: needed frontier, got balanced/low",
+    "verify_claim: needed frontier, got balanced/low"
+   ],
+   "ci95": [
+    0.467,
+    0.82
+   ]
+  },
+  "static_rules_medium_effort": {
+   "profile": "static_rules_medium_effort",
+   "n": 24,
+   "accuracy": 0.792,
+   "cost_per_1000": 8.67,
+   "cost_per_correct": 0.01096,
+   "mean_latency_ms": 6184.0,
+   "p95_latency_ms": 13783.0,
+   "tier_mix": {
+    "nano": 4,
+    "fast": 8,
+    "balanced": 12,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed frontier, got fast/medium",
+    "summarise_impact: needed frontier, got fast/medium",
+    "draft_change_request: needed frontier, got balanced/medium",
+    "verify_claim: needed frontier, got balanced/medium"
+   ],
+   "ci95": [
+    0.595,
+    0.908
+   ]
+  },
+  "jev_pure_no_floors": {
+   "profile": "jev_pure_no_floors",
+   "n": 24,
+   "accuracy": 0.417,
+   "cost_per_1000": 13.72,
+   "cost_per_correct": 0.03292,
+   "mean_latency_ms": 4769.0,
+   "p95_latency_ms": 10001.0,
+   "tier_mix": {
+    "nano": 15,
+    "fast": 1,
+    "balanced": 5,
+    "frontier": 3
+   },
+   "failures": [
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed frontier, got balanced/low",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed frontier, got balanced/low",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none"
+   ],
+   "ci95": [
+    0.245,
+    0.612
+   ]
+  },
+  "jev_with_floors": {
+   "profile": "jev_with_floors",
+   "n": 24,
+   "accuracy": 0.875,
+   "cost_per_1000": 16.53,
+   "cost_per_correct": 0.01889,
+   "mean_latency_ms": 5585.0,
+   "p95_latency_ms": 10001.0,
+   "tier_mix": {
+    "nano": 3,
+    "fast": 6,
+    "balanced": 12,
+    "frontier": 3
+   },
+   "failures": [
+    "extract_dependencies: needed balanced, got fast/low",
+    "draft_status_pack: needed frontier, got balanced/low",
+    "verify_claim: needed frontier, got balanced/low"
+   ],
+   "ci95": [
+    0.69,
+    0.957
+   ]
+  }
+ },
+ "routing_heldout": {
+  "all_frontier": {
+   "profile": "all_frontier",
+   "n": 24,
+   "accuracy": 1.0,
+   "cost_per_1000": 61.0,
+   "cost_per_correct": 0.061,
+   "mean_latency_ms": 11912.0,
+   "p95_latency_ms": 22518.0,
+   "tier_mix": {
+    "nano": 0,
+    "fast": 0,
+    "balanced": 0,
+    "frontier": 24
+   },
+   "failures": [],
+   "ci95": [
+    0.862,
+    1.0
+   ]
+  },
+  "all_nano": {
+   "profile": "all_nano",
+   "n": 24,
+   "accuracy": 0.125,
+   "cost_per_1000": 0.17,
+   "cost_per_correct": 0.00138,
+   "mean_latency_ms": 1792.0,
+   "p95_latency_ms": 3250.0,
+   "tier_mix": {
+    "nano": 24,
+    "fast": 0,
+    "balanced": 0,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed frontier, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed balanced, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed frontier, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed frontier, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed frontier, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed frontier, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none"
+   ],
+   "ci95": [
+    0.043,
+    0.31
+   ]
+  },
+  "static_rules": {
+   "profile": "static_rules",
+   "n": 24,
+   "accuracy": 0.667,
+   "cost_per_1000": 5.27,
+   "cost_per_correct": 0.00791,
+   "mean_latency_ms": 3296.0,
+   "p95_latency_ms": 7117.0,
+   "tier_mix": {
+    "nano": 4,
+    "fast": 8,
+    "balanced": 12,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got fast/low",
+    "extract_dependencies: needed frontier, got fast/low",
+    "summarise_impact: needed balanced, got fast/low",
+    "summarise_impact: needed frontier, got fast/low",
+    "draft_status_pack: needed frontier, got balanced/low",
+    "draft_change_request: needed frontier, got balanced/low",
+    "verify_claim: needed frontier, got balanced/low"
+   ],
+   "ci95": [
+    0.467,
+    0.82
+   ]
+  },
+  "static_rules_medium_effort": {
+   "profile": "static_rules_medium_effort",
+   "n": 24,
+   "accuracy": 0.792,
+   "cost_per_1000": 8.67,
+   "cost_per_correct": 0.01096,
+   "mean_latency_ms": 6184.0,
+   "p95_latency_ms": 13783.0,
+   "tier_mix": {
+    "nano": 4,
+    "fast": 8,
+    "balanced": 12,
+    "frontier": 0
+   },
+   "failures": [
+    "classify_evidence: needed fast, got nano/none",
+    "extract_dependencies: needed frontier, got fast/medium",
+    "summarise_impact: needed frontier, got fast/medium",
+    "draft_change_request: needed frontier, got balanced/medium",
+    "verify_claim: needed frontier, got balanced/medium"
+   ],
+   "ci95": [
+    0.595,
+    0.908
+   ]
+  },
+  "jev_pure_no_floors": {
+   "profile": "jev_pure_no_floors",
+   "n": 24,
+   "accuracy": 0.208,
+   "cost_per_1000": 1.51,
+   "cost_per_correct": 0.00723,
+   "mean_latency_ms": 2391.0,
+   "p95_latency_ms": 3460.0,
+   "tier_mix": {
+    "nano": 20,
+    "fast": 0,
+    "balanced": 4,
+    "frontier": 0
+   },
+   "failures": [
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed balanced, got nano/none",
+    "extract_dependencies: needed fast, got nano/none",
+    "extract_dependencies: needed frontier, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed balanced, got nano/none",
+    "summarise_impact: needed fast, got nano/none",
+    "summarise_impact: needed frontier, got balanced/low",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed balanced, got nano/none",
+    "draft_status_pack: needed frontier, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed frontier, got balanced/low",
+    "draft_change_request: needed balanced, got nano/none",
+    "draft_change_request: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed frontier, got nano/none",
+    "verify_claim: needed balanced, got nano/none",
+    "verify_claim: needed balanced, got nano/none"
+   ],
+   "ci95": [
+    0.092,
+    0.405
+   ]
+  },
+  "jev_with_floors": {
+   "profile": "jev_with_floors",
+   "n": 24,
+   "accuracy": 0.708,
+   "cost_per_1000": 5.59,
+   "cost_per_correct": 0.00789,
+   "mean_latency_ms": 3584.0,
+   "p95_latency_ms": 7327.0,
+   "tier_mix": {
+    "nano": 3,
+    "fast": 7,
+    "balanced": 14,
+    "frontier": 0
+   },
+   "failures": [
+    "extract_dependencies: needed balanced, got fast/low",
+    "extract_dependencies: needed frontier, got fast/low",
+    "summarise_impact: needed balanced, got fast/low",
+    "summarise_impact: needed frontier, got balanced/low",
+    "draft_status_pack: needed frontier, got balanced/low",
+    "draft_change_request: needed frontier, got balanced/low",
+    "verify_claim: needed frontier, got balanced/low"
+   ],
+   "ci95": [
+    0.508,
+    0.851
+   ]
+  }
+ },
+ "gate_heldout": {
+  "good_but_sent_to_human": 8,
+  "unsupported_caught": 14,
+  "n": 22
+ },
+ "roi": {
+  "lines": [
+   {
+    "name": "naive_claimed_run_rate",
+    "value": 34950000,
+    "label": "Calculated",
+    "formula": "sum of annual saving of retired apps"
+   },
+   {
+    "name": "naive_savings_at_risk",
+    "value": 15685000,
+    "label": "Calculated",
+    "formula": "claimed - net_of_rollbacks (naive plan)"
+   },
+   {
+    "name": "naive_rework_effort_points",
+    "value": 1005,
+    "label": "Calculated",
+    "formula": "2x emergency rewires + wasted decom effort"
+   },
+   {
+    "name": "naive_rework_cost",
+    "value": 2512500,
+    "label": "Calculated",
+    "formula": "rework points x cost_per_effort_point"
+   },
+   {
+    "name": "governed_extra_renewal_cost",
+    "value": 7963000,
+    "label": "Calculated",
+    "formula": "governed renewal penalty - naive renewal penalty (conservative: naive ignores rework delay)"
+   },
+   {
+    "name": "structural_renewal_floor",
+    "value": 3395000,
+    "label": "Calculated",
+    "formula": "unavoidable under ANY plan"
+   },
+   {
+    "name": "incident_rate",
+    "value": 0.5,
+    "label": "Assumed",
+    "formula": "share of critical orphans causing a rollback"
+   },
+   {
+    "name": "cost_per_effort_point",
+    "value": 2500,
+    "label": "Assumed",
+    "formula": ""
+   },
+   {
+    "name": "platform_build_cost",
+    "value": 450000,
+    "label": "Assumed",
+    "formula": ""
+   },
+   {
+    "name": "platform_annual_run",
+    "value": 120000,
+    "label": "Assumed",
+    "formula": ""
+   },
+   {
+    "name": "human_review_cost",
+    "value": 7080.0,
+    "label": "Calculated",
+    "formula": "decisions x hours x rate (hours, rate Assumed)"
+   },
+   {
+    "name": "ai_layer_cost_usd",
+    "value": 0.6464499999999981,
+    "label": "Calculated",
+    "formula": "pipeline run, illustrative prices; 1 unit = 1 USD (Assumed)"
+   }
+  ],
+  "avoided_loss": 9098750,
+  "governance_cost": 8540081,
+  "net_benefit": 558669,
+  "bcr": 1.07,
+  "break_even_incident_rate": 0.469
+ },
+ "roi_sensitivity": {
+  "incident_rate": [
+   [
+    0.1,
+    -6720331,
+    0.21
+   ],
+   [
+    0.25,
+    -3990706,
+    0.53
+   ],
+   [
+    0.5,
+    558669,
+    1.07
+   ],
+   [
+    0.75,
+    5108044,
+    1.6
+   ],
+   [
+    1.0,
+    9657419,
+    2.13
+   ]
+  ],
+  "cost_per_effort_point": [
+   [
+    1000,
+    -195081,
+    0.98
+   ],
+   [
+    2500,
+    558669,
+    1.07
+   ],
+   [
+    5000,
+    1814919,
+    1.21
+   ],
+   [
+    10000,
+    4327419,
+    1.51
+   ]
+  ]
+ },
+ "ai_spend_at_scale": {
+  "all_frontier": {
+   "138": 8.42,
+   "10000": 610.0,
+   "1000000": 61000.0
+  },
+  "all_nano": {
+   "138": 0.02,
+   "10000": 1.7,
+   "1000000": 170.0
+  },
+  "static_rules": {
+   "138": 0.73,
+   "10000": 52.7,
+   "1000000": 5270.0
+  },
+  "static_rules_medium_effort": {
+   "138": 1.2,
+   "10000": 86.7,
+   "1000000": 8670.0
+  },
+  "jev_pure_no_floors": {
+   "138": 0.21,
+   "10000": 15.1,
+   "1000000": 1510.0
+  },
+  "jev_with_floors": {
+   "138": 0.77,
+   "10000": 55.9,
+   "1000000": 5590.0
+  }
+ }
+}
