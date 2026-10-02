@@ -1,4 +1,5 @@
 # SunsetIQ — governed legacy-application retirement planning with a decision-model routing layer
+![tests](https://github.com/aniruddhabasu1985-tech/sunsetiq-ai/actions/workflows/tests.yml/badge.svg)
 
 **Dependency-aware application rationalisation · technical-debt decommissioning · LangGraph multi-agent pipeline · human-in-the-loop
 autonomy ladder · tamper-evident audit log · claimed-vs-verified savings · LLM model routing (Jev / System One decision model) ·
